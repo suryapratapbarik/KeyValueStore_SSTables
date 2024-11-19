@@ -1,0 +1,28 @@
+{
+  "cacheVerticle": {
+    "instances": 8,
+    "cacheSize": 1000000,
+    "evictionPolicy": "LRU"
+  },
+  "filePersistenceVerticle": {
+    "instances": 2,
+    "worker": true,
+    "batchWriteIntervalMs": 5000,
+    "batchSize": 100,
+    "dataDirectory": "data/"
+  },
+  "bloomFilterVerticle": {
+    "instances": 2,
+    "worker": true,
+    "bloomFilterSize": 1000000,
+    "numHashFunctions": 3
+  },
+  "requestRouterVerticle": {
+    "instances": 2
+  },
+  "vertxOptions": {
+    "workerPoolSize": 16,
+    "eventLoopPoolSize": 8,
+    "clustered": false
+  }
+}
